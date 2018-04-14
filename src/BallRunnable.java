@@ -68,7 +68,6 @@ public class BallRunnable implements Runnable, GameConstants {
                     if (!ballComponent.startClick) {
                         EventQueue.invokeLater(new Runnable() {
                             public void run() {
-                                // TODO Auto-generated method stub
                                 scoreLabel.setText("Цель: выбить " + goal + " шаров из " + ballQnt);
                             }
                         });

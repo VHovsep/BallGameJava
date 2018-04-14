@@ -9,7 +9,6 @@ public class BallComponent extends JPanel implements GameConstants {
     public int score = 0;
     public int totalScore = 0;
 
-    //добавляем объект Ball в список
     public void addBall(Ball b) {
         listBall.add(b);
     }

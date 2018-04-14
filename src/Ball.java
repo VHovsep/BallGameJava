@@ -6,19 +6,9 @@ import java.util.TimerTask;
 public class Ball implements GameConstants{
     private int inAction;
     private int x;
-
-    public int getInAction() {
-        return inAction;
-    }
-
     private int y;
     private int dx;
     private  int dy;
-
-    public Color getColor() {
-        return color;
-    }
-
     private  int radius;
     private  int dRadius;
     private Color color;
@@ -28,6 +18,12 @@ public class Ball implements GameConstants{
     private Timer gameTimer;
     private TimerTask gameTimerTask;
 
+    public Color getColor(){
+        return color;
+    }
+    public int getInAction(){
+        return inAction;
+    }
 
     Ball(int x, int y, int dx, int dy, int radius, Color color, int inAction, int dRadius){
         this.x=x;

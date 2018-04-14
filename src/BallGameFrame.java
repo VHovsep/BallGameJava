@@ -7,12 +7,11 @@ import java.awt.event.MouseEvent;
 import java.util.Random;
 
 public class BallGameFrame extends JFrame implements GameConstants {
-    private int level=1; //Первый уровень
+    private int level=1;
     private int ballQnt;
     private BallComponent ballComponent;
     private MousePlayer mousePlayerListener;
 
-    //конструктор
     public BallGameFrame() {
         ballQnt=STARTQNTBALLS;
         setTitle("BallGame");
@@ -42,12 +41,10 @@ public class BallGameFrame extends JFrame implements GameConstants {
         Thread t = new Thread(r);
         t.start();
     }
-    // внутренний Класс MousePlayer, для отработки событий от мыши:
+
     class MousePlayer extends MouseAdapter {
-        public void mouseClicked(MouseEvent e) { //Создаем шарик игрока
+        public void mouseClicked(MouseEvent e) {
             Random random = new Random();
-            //Создаем шарик игрока, с приращением радиуса равным единице
-            //и приращением координат (скоростями), равными нулю
             Ball ball = new Ball(e.getX(),
                     e.getY(),
                     0,
@@ -58,7 +55,6 @@ public class BallGameFrame extends JFrame implements GameConstants {
                     1);
             ballComponent.startClick=true;
             ballComponent.addBall(ball);
-            //Удаляем слушателя мыши, чтобы пользователь не мог накликать еще шариков, и приводим курсор мыши в первоначальное положение
             ballComponent.removeMouseListener(mousePlayerListener);
             ballComponent.removeMouseMotionListener(mousePlayerListener);
             ballComponent.setCursor(Cursor.getDefaultCursor());
